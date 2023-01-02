@@ -1,9 +1,9 @@
 <script>
-  
+  import TransactionList from "./lib/TransactionList.svelte";
 </script>
 
 <main>
-  <h1>Hello, world!</h1>
+  <TransactionList />
 </main>
 
 <style>
