@@ -2,7 +2,7 @@
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -37,15 +37,10 @@ h1 {
   line-height: 1.1;
 }
 
-.card {
-  padding: 2em;
-}
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 button {
