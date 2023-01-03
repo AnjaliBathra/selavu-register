@@ -1,13 +1,16 @@
 <script>
     import { v4 as uuidv4} from 'uuid';
     import { createEventDispatcher } from 'svelte';
+    import { CategoryStore } from '../stores.js';
     import Card from "./ui/Card.svelte";
+    import Select from "./ui/Select.svelte";
     import Button from "./ui/Button.svelte";
 
     const dispatch = createEventDispatcher();
 
-    let text = ''
-    let amount = 0.00
+    let text = '';
+    let amount = 0.00;
+    let selected = '';
     let btnDisabled = true;
     let minimum = 5;
     let message;
@@ -31,8 +34,9 @@
                 "date": new Date(), 
                 "memo": text,
                 amount,
-                "category": null
+                "category": selected
             }
+            console.log(newTransaction)
 
             dispatch('add-transaction', newTransaction);
         }
@@ -42,16 +46,19 @@
 <Card type="form">
     <h3>Enter the details of your transaction below:</h3>
     <form on:submit|preventDefault={handleSubmit}>
+        <div class="input-group">
             <input type="text" 
                     on:input={handleInput} 
                     bind:value={text}
                     placeholder="Describe your expense..." />
-            <div class="input-group">
-                <label>Amount: 
-                    <input type="number" bind:value={amount} step="0.01" min="0"/>
-                </label> 
-                <Button disabled={btnDisabled}>Submit</Button>
-            </div>
+            <Select name="category" options={$CategoryStore} on:select-option={(e) => selected = e.detail} />
+        </div>  
+        <div class="input-group">
+            <label>Amount: 
+                <input type="number" bind:value={amount} step="0.01" min="0"/>
+            </label> 
+            <Button disabled={btnDisabled}>Submit</Button>
+        </div>
 
             {#if message}
                 <div class="message">
@@ -72,7 +79,13 @@
         color: #fff;
     }
 
-    .input-group {
+    .input-group:nth-of-type(1) {
+        display: grid;
+        grid-template-columns: auto 100px;
+        column-gap: 10px;
+    }
+
+    .input-group:nth-of-type(2) {
         display: grid;
         grid-template-columns: 1fr auto;
         column-gap: 10px;

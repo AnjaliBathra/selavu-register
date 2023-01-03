@@ -29,4 +29,30 @@ export const TransactionStore = writable([
         "amount": 40.00,
         "category": "phone"
     }
-])
+]);
+
+export const CategoryStore = writable([
+    "gift",
+    "education",
+    "rent",
+    "grocery",
+    "phone",
+    "clothing",
+    "electricity",
+    "food",
+    "tax",
+    "car",
+    "transport",
+    "home",
+    "insurance",
+    "pets",
+    "health",
+    "beauty",
+    "travel",
+    "leisure",
+    "entertainment",
+    "electronics",
+    "salary",
+    "utilities",
+    "other"
+]);
