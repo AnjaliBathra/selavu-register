@@ -15,7 +15,7 @@
     }
 </script>
 
-<Card>
+<Card type="list-item">
     <div class="date">
         {item.date}
     </div>

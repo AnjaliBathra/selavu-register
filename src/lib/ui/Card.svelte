@@ -1,14 +1,17 @@
-<div class="card">
+<script>
+    export let type;
+</script>
+
+<div class="card {type}">
     <slot></slot>
 </div>
 
 <style>
     .card {
-        width: 300px;
+        min-width: 400px;
+        width: max-content;
+        max-width: 500px;
         display: grid;
-        grid-template-columns: 60px auto 50px;
-        grid-template-areas: "icon date date" 
-                             "icon text amt";
         align-items: center;
         background-color: #fff;
         color: #213547;
@@ -17,4 +20,11 @@
         margin: 20px 0;
         position: relative;
     }
+
+    .list-item {
+        grid-template-columns: 60px auto 50px;
+        grid-template-areas: "icon date date" 
+                             "icon text amt";
+    }
+
 </style>
