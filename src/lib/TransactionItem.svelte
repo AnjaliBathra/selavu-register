@@ -1,11 +1,11 @@
 <script>
-    import { createEventDispatcher } from 'svelte'
-    import GiTShirt from 'svelte-icons/gi/GiTShirt.svelte'
-    import GiPhone from 'svelte-icons/gi/GiPhone.svelte'
-    import FaShoppingBasket from 'svelte-icons/fa/FaShoppingBasket.svelte'
-    import FaGift from 'svelte-icons/fa/FaGift.svelte'
-    import Card from "./ui/Card.svelte"
-    import Icon from './ui/Icon.svelte'
+    import { createEventDispatcher } from 'svelte';
+    import GiTShirt from 'svelte-icons/gi/GiTShirt.svelte';
+    import GiPhone from 'svelte-icons/gi/GiPhone.svelte';
+    import FaShoppingBasket from 'svelte-icons/fa/FaShoppingBasket.svelte';
+    import FaGift from 'svelte-icons/fa/FaGift.svelte';
+    import Card from "./ui/Card.svelte";
+    import Icon from './ui/Icon.svelte';
     export let item
 
     const dispatch = createEventDispatcher()

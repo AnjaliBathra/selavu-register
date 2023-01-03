@@ -1,13 +1,8 @@
 <script>
-    import { TransactionStore } from "../stores";
     import TransactionItem from "./TransactionItem.svelte";
-
-    const deleteTransaction = (e) => {
-        const id = e.detail
-        // Update TransactionStore here
-    }
+    export let transactions;
 </script>
 
-{#each $TransactionStore as t (t.id)}
-    <TransactionItem item={t} on:delete-transaction={deleteTransaction} />
+{#each transactions as t (t.id)}
+    <TransactionItem item={t} on:delete-transaction />
 {/each}
