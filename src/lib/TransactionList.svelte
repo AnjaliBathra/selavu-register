@@ -4,5 +4,5 @@
 </script>
 
 {#each $TransactionStore as t (t.id)}
-    <TransactionItem item={t} />
+    <TransactionItem item={t} on:delete-transaction />
 {/each}
