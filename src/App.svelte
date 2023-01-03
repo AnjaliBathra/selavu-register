@@ -24,11 +24,14 @@
 </script>
 
 <main>
+  <h1>செலவு பதிவு </h1>
   <TransactionForm on:add-transaction={addTransaction} />
   <TransactionStats {count} />
   <TransactionList transactions={$TransactionStore} on:delete-transaction={deleteTransaction} />
 </main>
 
 <style>
-
+  h1 { 
+    text-align: center;
+  }
 </style>

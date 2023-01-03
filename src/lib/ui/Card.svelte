@@ -8,9 +8,7 @@
 
 <style>
     .card {
-        min-width: 400px;
-        width: max-content;
-        max-width: 500px;
+        width: 400px;
         display: grid;
         align-items: center;
         background-color: #fff;

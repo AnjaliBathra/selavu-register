@@ -17,7 +17,11 @@
 
 <Card type="list-item">
     <div class="date">
-        {item.date}
+        {new Intl.DateTimeFormat([], {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          }).format(item.date)}
     </div>
     <Icon>
         {#if item.category === 'gift'}
@@ -29,7 +33,7 @@
         {:else if item.category === 'phone'}
             <GiPhone />
         {:else}
-            {null}
+            <FaShoppingBasket />
         {/if}
     </Icon>
     <div class="text">

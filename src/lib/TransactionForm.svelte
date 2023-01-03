@@ -48,7 +48,7 @@
                     placeholder="Describe your expense..." />
             <div class="input-group">
                 <label>Amount: 
-                    <input type="number" bind:value={amount}/>
+                    <input type="number" bind:value={amount} step="0.01" min="0"/>
                 </label> 
                 <Button disabled={btnDisabled}>Submit</Button>
             </div>
@@ -62,6 +62,9 @@
 </Card>
 
 <style>
+    h3 {
+        text-align: center;
+    }
     form {
         display: grid;
         row-gap: 10px;
