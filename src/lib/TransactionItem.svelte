@@ -1,5 +1,5 @@
 <script>
-    import { createEventDispatcher } from 'svelte/types/runtime/internal/lifecycle'
+    import { createEventDispatcher } from 'svelte'
     import GiTShirt from 'svelte-icons/gi/GiTShirt.svelte'
     import GiPhone from 'svelte-icons/gi/GiPhone.svelte'
     import FaShoppingBasket from 'svelte-icons/fa/FaShoppingBasket.svelte'
@@ -38,7 +38,7 @@
     <div class="amt">
         ₹{item.amount}
     </div>
-    <div class="close" on:click={() => handleDelete(item.id)}>X</div>
+    <button class="close" on:click={() => handleDelete(item.id)}>X</button>
 </Card>
 
 <style>
@@ -62,7 +62,14 @@
         position: absolute;
         top: 10px;
         right: 15px;
+        height: 10px;
+        width: 10px;
         font-weight: 600;
+        color: #213547;
         cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
     }
+
 </style>
